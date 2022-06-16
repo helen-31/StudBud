@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/bc190c9d97.js" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<!-- Used code from https://codepen.io/devikadas07/pen/BmGPOW -->
+
+<body>
+  <div class="container">
+
+    <div class="sidebar">
+      <a class="active" href="index.html">Home</a>
+      <a href="kanban.html">Kanban</a>
+      <a href="stopwatch.html">Stopwatch</a>
+      <a href="timer.html">Timer</a>
+      <a href="read.html">Reading List</a>
+      <a href="#about">Music</a>
+    </div>
+
+    <main>
+      <div class="tlcontainer">
+
+        <!-- the list -->
+        <div class="List">
+          <div class="tasks">
+            <ul id="task-list">
+            </ul>
+          </div>
+          <ul id="pagination" class="pagination pagination-lg"></ul>
+
+        </div>
+
+        <!-- the form -->
+
+        <div class="Task">
+
+          <form class="squeeze">
+            <h3 class="create">Create Task</h3>
+            <div class="form-group">
+              <label for="title">Task:</label>
+              <input type="text" id="title" class="form-control" placeholder="Add a title... ">
+            </div>
+            <div class="form-group">
+              <label for="usr">Priority:</label>
+              <select id="usr" name="cars">
+                <option class="high" value="High">High</option>
+                <option class="medium" value="Medium">Medium</option>
+                <option class="low" value="Low">Low</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="due-date">Due Date:</label>
+              <input type="date" id="due-date" class="form-control" placeholder="Due date">
+            </div>
+            <div class="row">
+              <div class="col-xs-3 pull-left">
+                <button type="button" class="btn-primary" onclick="newElement()">Add Task</button>
+              </div>
+
+
+            </div>
+          </form>
+        </div>
+
+        <!-- title -->
+        <div class="Title">
+          <div class="jumbotron page-header">
+            <h2>My To Do List</h2>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <nav>
+
+      <img class="logo" href="index.html" src="ps/SB.png" atl="logo" height=100%>
+
+      <div class="right">
+        <a class="active" href="#notifications">notifications</a>
+        <a href="#profile">Profile</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="left">
+        <a href="#menu">Menu</a>
+        <a href="#home">Home</a>
+      </div>
+    </nav>
+  </div>
+  <script src="js/tasklist.js"></script>
+</body>
+
+</html>
