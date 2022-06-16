@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+</head>
+
+<!-- Used code from https://codepen.io/sheltermelter/pen/qpvqBV-->
+
+<body>
+  <div class="container">
+
+    <div class="sidebar">
+      <a href="tasklist.html">Home</a>
+      <a class="active" href="kanban.html">Kanban</a>
+      <a href="stopwatch.html">Stopwatch</a>
+      <a href="timer.html">Timer</a>
+      <a href="read.html">Reading List</a>
+      <a href="music.html">Music</a>
+    </div>
+    <main>
+
+      <header>
+        <h1 class="title">Kanban Board</h1>
+      </header>
+
+      <div class="main">
+
+      
+        <aside class="column colors">
+          <button id="red" class="color" value="#F44336">
+            <span class="oi"></span>
+          </button>
+          <button id="yellow" class="color" value="#FFEB3B">
+            <span class="oi oi-check"></span>
+          </button>
+          <button id="green" class="color" value="#4CAF50">
+            <span class="oi"></span>
+          </button>
+        </aside>
+
+        <div class="lists">
+
+          <section class="column list">
+            <header>
+              <h3>To do</h3>
+              <button>
+                <span class="oi oi-chevron-top"></span>
+              </button>
+            </header>
+
+            <input type="text" placeholder="Add new card">
+
+            <div id="sortable1" class="list-body">
+              <div class="kanban-card">
+                <p>Task 1</p>
+                <button>
+                  <span class="oi oi-x"></span>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <section class="column list">
+            <header>
+              <h3>Doing</h3>
+            </header>
+            <div id="sortable2" class="list-body"></div>
+          </section>
+
+          <section class="column list">
+            <header>
+              <h3>Done</h3>
+            </header>
+            <div id="sortable3" class="list-body"></div>
+          </section>
+
+        </div>
+
+      </div>
+    </main>
+
+    <nav>
+
+      <img class="logo" href="index.html" src="ps/studbud.png" atl="logo" height=100%>
+
+      <div class="right">
+        <a class="active" href="#notifications">notifications</a>
+        <a href="#profile">Profile</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="left">
+        <a href="#menu">Menu</a>
+        <a href="#home">Home</a>
+      </div>
+    </nav>
+  </div>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
