@@ -27,7 +27,7 @@ function newElement() {
       todo = inputTitle + ": " + inputUser + " priority";
     }
     if (inputDate != '') {
-      todo = todo + "     nDue: " + inputDate
+      todo = todo + "     Due: " + inputDate
     }
   }
   var newTodoId = findNextId(),
