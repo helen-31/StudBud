@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <script src="https://kit.fontawesome.com/bc190c9d97.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- Used code from https://codepen.io/cathydutton/pen/xxpOOw -->
+
+<body>
+  <div class="container">
+
+    <div class="sidebar">
+      <a href="tasklist.html">Home</a>
+      <a href="kanban.html">Kanban</a>
+      <a class="active" href="stopwatch.html">Stopwatch</a>
+      <a href="timer.html">Timer</a>
+      <a href="read.html">Reading List</a>
+      <a href="music.html">Music</a>
+    </div>
+
+    <!-- STOPWATCH -->
+    <main>
+
+      <h1 id="stp">Stopwatch</h1>
+
+      <div class="wrapper">
+        <!--giving each aspect of the time the inital reading of 00-->
+        <p><span id="minutes">00</span><span id="dots">:</span><span id="seconds">00</span><span id="dots">:</span><span
+            id="tens">00</span></p>
+
+        <!-- these are the three buttons for start stop resent each with their own id which will be called in the javascript-->
+        <div class="stopbtns">
+          <button id="button-start">Start</button>
+          <button id="button-stop">Stop</button>
+          <button id="button-reset">Reset</button>
+        </div>
+      </div>
+    </main>
+
+    <nav>
+
+      <img class="logo" href="index.html" src="ps/studbud.png" atl="logo" height=100%>
+
+      <div class="right">
+        <a class="active" href="#notifications">notifications</a>
+        <a href="#profile">Profile</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="left">
+        <a href="#menu">Menu</a>
+        <a href="#home">Home</a>
+      </div>
+    </nav>
+  </div>
+  <script src="js/stopwatch.js"></script>
+</body>
+
+</html>
