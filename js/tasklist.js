@@ -13,9 +13,10 @@ var currentPage = 1;
 var numberPerPage = 10;
 var numberOfPages = 0;
 
+// function which inputds the title of the new element with its due date and priority. if the user doesnt input a task an alert happens and if they do then the last is displayed in the new element
 function newElement() {
   var inputTitle = document.getElementById('title').value,
-    inputUser = document.getElementById('usr').value,
+    inputLevel = document.getElementById('usr').value,
     inputDate = document.getElementById('due-date').value,
     todo = '';
   if (inputTitle === '') {
@@ -23,13 +24,15 @@ function newElement() {
     return;
   } else {
     todo = inputTitle;
-    if (inputUser != '') {
-      todo = inputTitle + ": " + inputUser + " priority";
+    if (inputLevel != '') {
+      todo = inputTitle + ": " + inputLevel + " priority";
     }
     if (inputDate != '') {
       todo = todo + "     Due: " + inputDate
     }
   }
+
+  // variable called new todo is created with function which redefines the id as the previous todo plus the newtodoID and then uses the push command to create the new task (newToDo) which will have its ID as well
   var newTodoId = findNextId(),
     newTodo = {
       'todo': todo,
@@ -40,25 +43,12 @@ function newElement() {
   clearFields();
 }
 
-// NEWWWW
-function colourOfTodo() {
-  if (inputUser === "High") {
-    document.getElementByClassName("'todo' + newTodoId").style.color = "#f44336";
-
-  }
-  if (inputUser === "Medium") {
-    document.getElementById("task").style.color = "#f44336";
-  }
-  if (inputUser === "Low") {
-    document.getElementById("task").style.color = "#f44336";
-  }
-  //DONE
-
-}
+//the parseint parses a value as a string and returns the first integer
 function fetchIdFromObj(todo) {
   return parseInt(todo.id.slice(4));
 }
 
+//if the array contains no elements then there are no IDs. It then creates a variable called lastemlementid which is defined by the last element in the array. and the firstelementid which is the first. 
 function findNextId() {
   if (todoList.length === 0) {
     return 0;
@@ -68,12 +58,14 @@ function findNextId() {
   return (firstElementId >= lastElementId) ? (firstElementId + 1) : (lastElementId + 1);
 }
 
+// reset the values of title usr and due-date to nothing
 function clearFields() {
   document.getElementById('title').value = '';
   document.getElementById('usr').value = '';
   document.getElementById('due-date').value = '';
 }
 
+// uses the splice function to remove one element from the array index. 
 function deleteElement(event) {
   var idOfEltToBeDeleted = event.target.parentElement.id;
   var arrayIndex = todoList.findIndex(function(singleTodo) {
@@ -85,6 +77,7 @@ function deleteElement(event) {
   load(todoList);
 }
 
+// 
 function displayOneElement(todoObject) {
   var li_element = document.createElement("li");
   var p_element = document.createElement("p");
@@ -102,6 +95,7 @@ function displayOneElement(todoObject) {
   document.getElementById("task-list").appendChild(li_element);
 }
 
+// a function to sort the todos by using if statements to sort them based off the value of their ID. 
 function sortElementsById() {
   var manyTodos = todoList.sort(function(a, b) {
     var x = fetchIdFromObj(a);
@@ -122,7 +116,7 @@ function getNumberOfPages(manyTodos) {
   return Math.ceil(manyTodos.length / numberPerPage);
 }
 
-
+// using the list with id pagnation from the html and creates a for loop which createds the same number of elements as there are pages. if i is equivalent to the current page then that class is is deemed "active". if the jnumber of pages is greater than 0  and the set active class is false (i isnt equivalent to current page) then current page becomes 1 and the function if run and todolist is loaded
 function refreshPaginations() {
   var paginationTarget = document.getElementById('pagination'),
     setActiveClass = false;
@@ -149,7 +143,7 @@ function refreshPaginations() {
   }
 }
 
-
+//this loads the list and creates two variable to represent the begining and end of the list and then uses the array slice to present an array with the begin variable and the end variable  
 function loadList(manyTodos) {
   var begin = ((currentPage - 1) * numberPerPage);
   var end = begin + numberPerPage;
@@ -158,7 +152,7 @@ function loadList(manyTodos) {
   drawList(pageList);
 }
 
-
+// the drawlist is created by drawing on the task-list to display the single todos  
 function drawList(manyTodos) {
   document.getElementById("task-list").innerHTML = "";
   manyTodos.forEach(function(singleTodo) {
@@ -166,7 +160,7 @@ function drawList(manyTodos) {
   });
 }
 
-
+// the function load manytodos redefines numberofpages using the function getnumberofpages from the manytodos and then loads that list
 function load(manyTodos) {
   numberOfPages = getNumberOfPages(manyTodos);
   loadList(manyTodos);

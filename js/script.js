@@ -24,7 +24,7 @@ $(document).ready(function() {
     );
   }
 
-  // Add new card. creating a keypress function in which another function is called. It saids that when text it typed and confirmed then the card with the given colour and text will be produced
+  // Add new card. creating a keypress function in which another function is called. It saids that when text it typed and confirmed then the a
   $("input[type=text]").keypress(function(event) {
     if (event.which === 13) {
       let text = $(this).val();
@@ -35,7 +35,7 @@ $(document).ready(function() {
     }
   });
 
-  // Delete card. 
+  // Delete card
   $(document).on("click", ".kanban-card > button", function() {
     $(this)
       .parent()
@@ -43,8 +43,8 @@ $(document).ready(function() {
         $(this).remove();
       });
   });
-  
-  // Toggle input field. 
+
+  // Toggle input field
   $("header").on("click", "button", function() {
     $(this)
       .children()
@@ -62,7 +62,6 @@ $(document).ready(function() {
       .addClass("oi-check");
   });
 
-  
   $(function() {
     $("#sortable1, #sortable2, #sortable3")
       .sortable({

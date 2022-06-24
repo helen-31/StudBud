@@ -241,8 +241,7 @@ nav button:hover{
 
 
 #container {
-    height: 100%
-    max-width: 50px;
+    height: 100%;
     background-color: var(--dos);
     border-radius: 25px;
     padding: 30px;
@@ -292,8 +291,8 @@ p {
 #counter {
     grid-area: 2 / 3 / 2 / 3;
     color: red;
-    margin: left; 30px;
-    margin: right; 30px;
+    margin-left: 30px;
+    margin-right: 30px;
   
 }
 
