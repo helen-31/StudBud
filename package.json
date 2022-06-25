@@ -1,0 +1,28 @@
+{
+  "name": "studbud",
+  "version": "1.0.0",
+  "description": "this is my assessment three web app prototype",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/helen-31/StudBud.git"
+  },
+  "author": "helen mclaren",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/helen-31/StudBud/issues"
+  },
+  "homepage": "https://github.com/helen-31/StudBud#readme",
+  "keywords": [
+    "assessment",
+    "fun",
+    "coding",
+    "yay"
+  ],
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
